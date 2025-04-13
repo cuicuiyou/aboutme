@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,19 +18,69 @@
       margin: auto;
       line-height: 1.6;
     }
+
+    .image-box {
+      width: 400px;
+      height: 300px;
+      margin: 40px auto;
+      border: 2px solid #ccc;
+      background: white;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a.word-link {
+      color: #007BFF;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a.word-link:hover {
+      color: #0056b3;
+    }
   </style>
 </head>
 <body>
   <h1>Hello!</h1>
   <p>I am Jian Cui (崔健).</p>
   <p>I grew up in <a href="https://en.wikipedia.org/wiki/Qingdao">Qingdao</a>, China.</p>
-  <p>When not doing linguistics, I enjoy reading, writing essays, and playing the cello.</p>
-  <p>I walk a lot and sometimes hike!</p>
-  <p>I cook a lot and sometimes bake!</p>
-  <p>I have a thing for green and sometimes blue!</p>
-  <p>I wear a lot of scarves and sometimes I knit!</p>
+  <p>When not doing linguistics, I enjoy reading, writing essays, and 
+    playing the <a class="word-link" onclick="updateImage('image2.jpg')">cello</a>.
+  </p>
+  <p>I walk a lot and sometimes 
+    <a class="word-link" onclick="updateImage('image3.jpeg')">hike</a>!
+  </p>
+  <p>I 
+    <a class="word-link" onclick="updateImage('image4.jpeg')">cook</a> a lot and sometimes 
+    <a class="word-link" onclick="updateImage('image5.jpeg')">bake</a>!
+  </p>
+  <p>I have a thing for 
+    <a class="word-link" onclick="updateImage('image6.JPG')">green</a> and sometimes 
+    <a class="word-link" onclick="updateImage('image7.JPG')">blue</a>!
+  </p>
+  <p>I wear a lot of 
+    <a class="word-link" onclick="updateImage('image8.jpg')">scarves</a> and sometimes I 
+    <a class="word-link" onclick="updateImage('image9.JPG')">knit</a>!
+  </p>
   <p>I capture everyday moments!</p>
-  <p>I collect mugs, always.</p>
-  
+  <p>I collect 
+    <a class="word-link" onclick="updateImage('image10.JPG')">mugs</a>, always.
+  </p>
+
+  <!-- 图片展示框 -->
+  <div class="image-box">
+    <img id="main-image" src="image1.jpeg" alt="Default Image">
+  </div>
+
+  <!-- JavaScript 逻辑 -->
+  <script>
+    function updateImage(imageFile) {
+      document.getElementById('main-image').src = imageFile;
+    }
+  </script>
 </body>
 </html>
